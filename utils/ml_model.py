@@ -70,7 +70,7 @@ def train_model(features: pd.DataFrame, model_type: str = "XGBoost"):
     if model_type == "XGBoost" and HAS_XGB:
         model = XGBClassifier(
             n_estimators=200, max_depth=5, learning_rate=0.1,
-            use_label_encoder=False, eval_metric="logloss",
+            eval_metric="logloss",
             random_state=42
         )
     elif model_type == "Random Forest":
